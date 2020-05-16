@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="ISO-8859-1">
+<link rel="stylesheet" href="css/cabecera.css">
+<link rel="stylesheet" href="css/searchView.css">
+<title>GOATBooks</title>
+</head>
+
+<body>
+	<header>
+		<div class="imagen_cabecera">
+		<a href="/index.html"><img src="images/Goat Books logo.png"></a>
+			<h1 id="titulo">GOATBooks</h1>
+		</div>
+	</header>
+	<h1 id="tbus">BÚSQUEDA DE LIBROS</h1>
+	<div id="busquedaDiv">
+	<div class="busquedaTitulo"><h3>Título del libro a buscar: </h3></div>
+		<form id="busquedaForm" action="GoogleBooksSearchController"
+			method="post">
+			<input class="barra" type="text" name="title" required />
+			<input class="boton" type="submit" name="botonBusqueda" title="buscar"
+				value="buscar">
+		</form>
+	</div>
+</body>
+</html>

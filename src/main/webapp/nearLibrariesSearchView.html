@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="ISO-8859-1">
+<link rel="stylesheet" href="css/nearLibrariesSearchView.css">
+<link rel="stylesheet" href="css/cabecera.css">
+<title>GOATBooks</title>
+</head>
+<body>
+	<header>
+		<div class="imagen_cabecera">
+			<a href="/index.html"><img src="images/Goat Books logo.png"></a>
+
+			<h1 id="titulo">GOATBooks</h1>
+		</div>
+	</header>
+	<div class="busqueda">Búsqueda de librerías según localización</div>
+
+	<script type="text/javascript">
+		function getLocationConstant() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(onGeoSuccess,
+						onGeoError);
+			} else {
+				alert("Su navegador es incompatible con la geolocalización.");
+			}
+		}
+
+		// En caso de acierto
+		function onGeoSuccess(event) {
+			document.getElementById("lat").value = event.coords.latitude;
+			document.getElementById("lng").value = event.coords.longitude;
+
+		}
+
+		// En caso de fallo
+		function onGeoError(evento) {
+			alert("Codigo de error " + evento.code + ". " + evento.message);
+		}
+	</script>
+	<div class="resultados">
+		<form action="HereLibrariesController" method="post">
+			<div id="datos">
+				<div id="formLibreria" class="hideClass">
+					Latitud: <input type="text" id="lat" name="lat" value=""> <br>
+					<br>Longitud: <input type="text" id="lng" name="lng" value="">
+					<br>
+				</div>
+				<br>Radio <input type="text" id="r" name="r" value="10000">
+			</div>
+			<input id="boton1" type="button" value="¡Localicese!"
+				onclick="getLocationConstant()" /> <br> <br> <input
+				id="boton2" type="submit" value="Busqueda de bibliotecas"
+				class=small>
+		</form>
+	</div>
+</body>
+</html>

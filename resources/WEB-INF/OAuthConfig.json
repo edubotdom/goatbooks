@@ -1,0 +1,16 @@
+{
+	"GoogleDrive": {
+		"tokenUrl": "https://www.googleapis.com/oauth2/v4/token",
+		"clientId": "708494824281-ih2l1nfspb524pkmp1s8sk92dp0u3675.apps.googleusercontent.com",
+		"clientSecret": "y1ieKb3Zmfy7vGbgpa3gMdZA",
+		"authorizationFormUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+		"scopes": ["https://www.googleapis.com/auth/drive"]
+	},
+	"Spotify": {
+		"tokenUrl": "https://accounts.spotify.com/api/token",
+		"clientId": "6db3fa19bc664e718ec7f6c25271b3d0",
+		"clientSecret": "5a923fa80b1b42b1a0c6c6fe34abaf36",
+		"authorizationFormUrl": "https://accounts.spotify.com/authorize",
+		"scopes": ["playlist-read-private","playlist-modify-private","playlist-read-collaborative","playlist-modify-public"]
+	}
+}		

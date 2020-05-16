@@ -1,0 +1,415 @@
+swagger: '2.0'
+info:
+  description: This is a simple API
+  version: 1.0.0
+  title: Simple Inventory API
+  # put the contact info for your development or API team
+  contact:
+    email: goatbooks.us@gmail.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+# tags are used for organizing operations
+tags:
+- name: admins
+  description: Secured Admin-only calls
+- name: developers
+  description: Operations available to regular developers
+
+paths:
+
+  /libraries:
+    get:
+      tags:
+      - libraries
+      summary: Get all libraries
+      operationId: getAllLibraries
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Library'
+        default:
+          description: unexpected error
+    post:
+      tags:
+      - libraries
+      summary: Add a library
+      operationId: addLibrary
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Library'
+        default:
+          description: unexpected error
+    put:
+      tags:
+      - libraries
+      summary: Update a library
+      operationId: updateLibrary
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Library'
+        default:
+          description: unexpected error
+          
+  /libraries/{libraryId}:
+    get:
+      tags:
+      - libraries
+      summary: Information about a library
+      operationId: getLibrary
+      parameters:
+      - name: libraryId
+        in: path
+        description: ID of library to return
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Library'
+              
+        default:
+          description: unexpected error
+    delete:
+      tags:
+      - libraries
+      summary: Delete library
+      operationId: deleteLibrary
+      parameters:
+      - name: libraryId
+        in: path
+        description: ID of library to return
+        required: true
+        type: string
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Library'
+              
+        default:
+          description: unexpected error
+  
+  /libraries/{libraryId}/{bookId}:
+    post:
+      tags:
+      - libraries
+      summary: add book to a library
+      operationId: addBookToLibrary
+      parameters:
+      - name: libraryId
+        in: path
+        description: ID of library to return
+        required: true
+        type: string
+      - name: bookId
+        in: path
+        description: ID of book to return
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Library'
+              
+        default:
+          description: unexpected error
+    delete:
+      tags:
+      - libraries
+      summary: delete a book from library
+      operationId: deleteBookOfLibrary
+      parameters:
+      - name: libraryId
+        in: path
+        description: ID of library to return
+        required: true
+        type: string
+      - name: bookId
+        in: path
+        description: ID of book to return
+        required: true
+        type: string
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Library'
+  
+  /books:
+    get:
+      tags:
+      - books
+      summary: Get all books
+      operationId: getAllBooks
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: unexpected error
+    post:
+      tags:
+      - books
+      summary: Create a book
+      operationId: createBook
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: unexpected error
+    put:
+      tags:
+      - books
+      summary: Update a book
+      operationId: updateBook
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: unexpected error
+          
+  /books/{bookId}:
+    get:
+      tags:
+      - books
+      summary: Information about a library
+      operationId: getBook
+      parameters:
+      - name: bookId
+        in: path
+        description: ID of book to return
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: unexpected error
+    delete:
+      tags:
+      - books
+      summary: Delete book
+      operationId: deleteBook
+      parameters:
+      - name: bookId
+        in: path
+        description: ID of book to delete
+        required: true
+        type: string
+      consumes:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: unexpected error
+  
+  /bookShops:
+    get:  
+      tags:
+      - bookshops
+      summary: Get all Shops about Books
+      operationId: getAllBookShops
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BookShop'
+        default:
+          description: unexpected error
+          
+  /bookShops/{bookShopId}:
+    get:
+      tags:
+      - bookshops
+      summary: Information about a Shop about Books
+      operationId: getBookShop
+      parameters:
+      - name: bookShopId
+        in: path
+        description: ID of bookShop to return
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/BookShop'
+        default:
+          description: unexpected error
+  
+    
+
+
+definitions:
+
+  Library:
+    type: object
+    required:
+    - id
+    - name
+    - description
+    - books
+    properties:
+      id:
+        type: string
+        example: 'd290f1ee-6c54'
+      name:
+        type: string
+        example: 'Libreria Fav'
+      description:
+        type: string
+        example: 'Librería donde guardo mis libros favoritos'
+      books:
+        type: array
+        items:
+          $ref: '#/definitions/Book'
+          
+  Book:
+    type: object
+    required:
+      - id
+      - title
+      - author
+      - type
+      - year
+      - pages
+      - lang
+      - punctuation
+    properties:
+      id:
+        type: string
+        example: 'd290f1ee-6c54'
+      title:
+        type: string
+        example: 'Don Quijote de la Mancha'
+      
+      authors:
+        type: string
+        example: 'Miguel de Cervantes Saavedra'
+      
+      type:
+        type: string
+        example: 'fantasia'
+      
+      year:
+        type: integer
+        example: 1605
+        
+      pages:
+        type: integer
+        example: 805
+        
+      lang:
+        type: string
+        example: 'es'
+        
+      punctuation:
+        type: number
+        example: 5.6
+        
+  BookShop:
+    type: object
+    required:
+      - id
+      - name
+      - location
+      - open
+      - close
+    properties:
+      id:
+        type: string
+        example: 'd290f1ee-6c54'
+      name:
+        type: string
+        example: 'Biblioteca CRAI de Universidad de Sevilla'
+      location:
+        type: string
+        example: 'Sevilla c/Reina Mercedes'
+      open:
+        type: string 
+        format: date-time
+        
+      close:
+        type: string
+        format: date-time
+      
+  
+# Added by API Auto Mocking Plugin
+# host: goatbooks.appspot.com
+# basePath: /api/v1
+schemes:
+ - https
+# Added by API Auto Mocking Plugin
+# host: goatbooks.appspot.com
+# basePath: /api/v1
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /goatbooks/goatbooksapi/1.0.0

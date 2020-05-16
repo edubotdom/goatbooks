@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<servlet>
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>aiss.HelloWorldServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/helloworld</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Presentacion</servlet-name>
+		<servlet-class>aiss.PresentacionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Presentacion</servlet-name>
+		<url-pattern>/presentacion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BusquedaBM</servlet-name>
+		<servlet-class>aiss.controller.BookMoochSearchController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BusquedaBM</servlet-name>
+		<url-pattern>/BookMoochSearchController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InfoOL</servlet-name>
+		<servlet-class>aiss.controller.OpenLibraryInfoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InfoOL</servlet-name>
+		<url-pattern>/OpenLibraryInfoController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ImagenPB</servlet-name>
+		<servlet-class>aiss.controller.PixabayPhotoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImagenPB</servlet-name>
+		<url-pattern>/PixabayPhotoController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BusquedaGB</servlet-name>
+		<servlet-class>aiss.controller.GoogleBooksSearchController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BusquedaGB</servlet-name>
+		<url-pattern>/GoogleBooksSearchController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LibAddGB</servlet-name>
+		<servlet-class>aiss.controller.GoogleBooksLibAddController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LibAddGB</servlet-name>
+		<url-pattern>/GoogleBooksLibAddController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InfoGB</servlet-name>
+		<servlet-class>aiss.controller.GoogleBooksInfoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InfoGB</servlet-name>
+		<url-pattern>/GoogleBooksInfoController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BooksFromShelf</servlet-name>
+		<servlet-class>aiss.controller.GoogleBooksLibListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BooksFromShelf</servlet-name>
+		<url-pattern>/GoogleBooksLibListController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BookDelete</servlet-name>
+		<servlet-class>aiss.controller.GoogleBooksLibDeleteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookDelete</servlet-name>
+		<url-pattern>/GoogleBooksLibDeleteController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LibrarieSearch</servlet-name>
+		<servlet-class>aiss.controller.HereLibrariesController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LibrarieSearch</servlet-name>
+		<url-pattern>/HereLibrariesController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WikiSearch</servlet-name>
+		<servlet-class>aiss.controller.WikipediaAuthorInformationController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WikiSearch</servlet-name>
+		<url-pattern>/WikipediaAuthorInformationController</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+    <servlet-name>GoogleBooksShelvesListController</servlet-name>
+    <servlet-class>aiss.controller.GoogleBooksShelvesListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleBooksShelvesListController</servlet-name>
+    <url-pattern>/BookShelvesView</url-pattern>
+  </servlet-mapping>
+	<servlet>
+    <description></description>
+    <servlet-name>GoogleBooksAuthController</servlet-name>
+    <servlet-class>aiss.controller.oauth.GenericAuthController</servlet-class>
+    <init-param>
+      <param-name>provider</param-name>
+      <param-value>GoogleBooks</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleBooksAuthController</servlet-name>
+    <url-pattern>/AuthController/GoogleBooks</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GoogleBooksOAuth2Callback</display-name>
+    <servlet-name>GoogleBooksOAuth2Callback</servlet-name>
+    <servlet-class>aiss.controller.oauth.OAuth2Callback</servlet-class>
+    <init-param>
+    	<param-name>provider</param-name>
+    	<param-value>GoogleBooks</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>onSuccess</param-name>
+    	<param-value>redirect:/BookShelvesView</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleBooksOAuth2Callback</servlet-name>
+    <url-pattern>/oauth2callback/GoogleBooks</url-pattern>
+  </servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<!--  OAUTH SERVLETS 
+  
+  	For each OAuth 2.0 service, you need to create two servlets: one for the initiation 
+  	and another for the callback. After sucess the token for the provider will be available
+  	in the session scope under the name <provider>-token. E.g.: Spotify-token.
+  	
+  	Those servlets support 2 parameters:
+  	 - provider: which is mandatory and specifies the configuration from the OAuthConfig.json file which
+  	    will be applied.
+  	 - onSuccess: which is optional specifies the behaviour of the servlet after an successful 
+  	 	authorization. If you specify close as the value of the parameter, the page will close. If you
+  	 	specify redirect:XXXX, the page will be redirected to XXXX.  
+  	
+  	WARNING: The url-patterns of all the servlets mus be disjoint. 
+  			Our recommendation is that if you expecify X as the provider, the url-pattern of the 
+  			initiation servlet could be	/AuthController/X, and the url-pattern of the callback
+  			 servlet must be /oauth2callback/X.
+  -->
+  <!--    Spotify example -->
+  
+  <!--  
+  <servlet>
+    <description></description>
+    <display-name>SpotifyAuthController</display-name>
+    <servlet-name>SpotifyAuthController</servlet-name>
+    <servlet-class>aiss.controller.oauth.GenericAuthController</servlet-class>
+    <init-param>
+    	<param-name>provider</param-name>
+    	<param-value>Spotify</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SpotifyAuthController</servlet-name>
+    <url-pattern>/AuthController/Spotify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SpotifyOAuth2Callback</display-name>
+    <servlet-name>SpotifyOAuth2Callback</servlet-name>
+    <servlet-class>aiss.controller.oauth.OAuth2Callback</servlet-class>
+    <init-param>
+    	<param-name>provider</param-name>
+    	<param-value>Spotify</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>onSuccess</param-name>
+    	<param-value>close</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SpotifyOAuth2Callback</servlet-name>
+    <url-pattern>/oauth2callback/Spotify</url-pattern>
+  </servlet-mapping>
+  
+  -->
+
+</web-app>

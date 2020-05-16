@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 1%;
+}
+
+div.busqueda {
+	margin: 1%;
+	padding: 1%;
+	font-size: 20px;
+	background-color: white;
+	font-family: Merienda;
+	max-width: -moz-fit-content;
+	opacity: 0.8;
+	border: black 2px solid;
+}
+
+div.resultados div#datos {
+	margin-top: 0.15%;
+	margin-bottom: 0.15%;
+	margin-left: 0.25%;
+}
+
+div.resultados div#portada {
+	float: left;
+	margin: 2%;
+}
+
+div.resultados {
+	background-color: white;
+	opacity: 0.8;
+	padding: 0.25%;
+	border: black 2px solid;
+	font-weight: bold;
+	font-family: Roboto;
+}
+
+div.resultados div.titulo {
+	font-variant: small-caps;
+	border-bottom: red 2px solid;
+	padding-bottom: 0.25%;
+	font-weight: bold;
+}
+
+div#busquedaDiv, div#busquedaFoto, div#addBook{
+	margin-left: 75%;
+	margin-bottom: 0.75%;
+	width: -moz-fit-content;
+}
+
+input#boton {
+	color: white;
+	border-radius: 18px;
+	border: 1px solid #42ebf4;
+	padding: 4%;
+	background-color: #66b9f4;
+	cursor: pointer;
+	font-weight: bold;
+  opacity: 1;
+	font-family: Merienda;
+}
+
+input#boton:hover {
+	background-color: lightblue;
+}

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+div#busquedaLibros, div#libreriasUsuario, div#busquedaBibliotecas, div#contactanos{
+	width: 15%;
+	height: 180px;
+	display: inline-block;
+	float: left;
+}
+
+div#busquedaLibros div.boton, div#libreriasUsuario div.boton, div#contactanos div.boton{
+	width: 80%;
+	margin-block: 5%;
+}
+
+div#busquedaBibliotecas div.boton{
+	width: 80%;
+	margin-block: 5%;
+}
+
+div.imagen{
+	display: block;
+  clear: both;
+}
+div.imagen img{
+	width: 70%;
+}
+
+.button{
+	width: 80%;
+	/*! height: 20px; */
+	float: left;
+	padding: 5%;
+}
+
+#busquedaLibros{
+	margin-left: 15%;
+	float: left;
+}
+
+#libreriasUsuario{
+	margin-left: 5%;
+	float: left;
+}
+
+#busquedaBibliotecas{
+	margin-left: 5%;
+	float: left;
+	
+}
+
+#contactanos{
+	margin-left: 5%;
+	margin-right: 10%;
+	float: left;
+	clear: right;
+	
+}
+
+div#busquedaLibros a.boton, div#libreriasUsuario a.boton, div#contactanos a.boton{
+	padding: 5%;
+	clear: both;
+}
+
+.button {
+	background-color: #66b9f4;
+	border-radius: 18px;
+	border: 1px solid #42ebf4;
+	color: white;
+	text-decoration: underline;
+	text-align: center;
+	font-family: Merienda;
+}
+
+.button:focus, .button:hover {
+	background-color: lightblue;
+	color: white;
+}
+

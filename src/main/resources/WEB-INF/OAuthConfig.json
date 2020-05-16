@@ -1,0 +1,10 @@
+{
+	"GoogleBooks": {
+		"tokenUrl": "https://www.googleapis.com/oauth2/v4/token",
+		"clientId": "975909515508-auf4ss14tbt069gr9qs7kmq8mmnkpb7s.apps.googleusercontent.com",
+		"clientSecret": "7UepusVmamNJdGF3b8ntS8RZ",
+		"authorizationFormUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+		"scopes": ["https://www.googleapis.com/auth/books"]
+	}
+
+}		

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+body {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 1%;
+}
+
+div.busqueda {
+	background-color: white;
+	opacity: 0.8;
+	padding: 0.25%;
+	border: black 2px solid;
+	font-weight: bold;
+	max-width: -moz-fit-content;
+	margin: 1%;
+	font-family: Merienda;
+}
+
+div.resultados {
+	background-color: white;
+	opacity: 0.8;
+	padding: 0.25%;
+	border: black 2px solid;
+	font-weight: bold;
+	font-family: Roboto;
+}
+
+button#boton {
+	padding: 0.25%;
+	font-size: 18px;
+	background-color: #dd9933;
+	cursor: pointer;
+	margin: 1%;
+	clear: right;
+	float: right;
+	background-color: #66b9f4;
+	border-radius: 18px;
+	border: 3px solid #42ebf4;
+	color: white;
+	opacity: 1.0;
+	text-align: center;
+	font-family: Merienda;
+	width: -moz-fit-content;
+}
+
+button#boton:hover {
+	background-color: #333333;
+}
+
+div#mapContainer {
+	margin: 1%;
+	float: right;
+	border: black 2px solid;
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+div.imagen_cabecera img{
+	width: 80%;
+	float: left;
+}
+div.imagen_cabecera{
+	width: 20%;
+	display: inline-block;
+	clear: right;
+}
+
+
+h1#titulo{
+	float: left;
+	width: 20%;
+	margin-top: 35%;
+	font-family: Lobster;
+	font-size: 65px;
+}
+
+body {
+	background-image:
+		url("/images/fondoGB.jpeg");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: cover;
+}

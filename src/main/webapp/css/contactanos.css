@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 1%;
+}
+
+div.busqueda {
+	margin: 1%;
+	padding: 1%;
+	font-size: 20px;
+	background-color: white;
+	font-family: Merienda;
+	max-width: -moz-fit-content;
+	opacity: 0.8;
+	border: black 2px solid;
+}
+
+div.resultados {
+	background-color: white;
+	opacity: 0.8;
+	padding: 0.25%;
+	border: black 2px solid;
+	font-weight: bold;
+	font-family: Roboto;
+}
+
+div.resultados .twitter-timeline {
+	display: inline-block;
+	margin-left: 10%;
+}
+
+div.resultados p.contactanos {
+	width: -moz-fit-content;
+	float: left;
+	display: inline-block;
+}

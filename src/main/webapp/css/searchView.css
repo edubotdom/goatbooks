@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+h1 {
+	text-align: center;
+}
+
+h1#tbus{
+	font-family: Merienda;
+}
+
+html body div#busquedaDiv div.busquedaTitulo h3{
+		font-family: Merienda;
+}
+
+div#busquedaDiv {
+	font-size: x-large;
+	text-align: center;
+}
+
+form#busquedaForm input.barra {
+	width: 30%;
+}
+
+form#busquedaForm input.boton {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #66b9f4;
+	cursor: pointer;
+	border-color: #000000;
+	background-color: #66b9f4;
+	border-radius: 18px;
+	border: 1px solid #42ebf4;
+	color: white;
+	text-decoration: underline;
+	text-align: center;
+	font-family: Merienda;
+}
+
+form#busquedaForm input.boton:hover {
+	background-color: lightblue;
+	}
